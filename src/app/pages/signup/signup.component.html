@@ -1,0 +1,136 @@
+<h1 class="mb-4">New Account Signup</h1>
+
+<form #form="ngForm" [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form">
+
+  <div class="row mb-3">
+    <div class="col">
+      <label for="firstName">First Name</label>
+      <input id="firstName" formControlName="firstName" class="form-control" required
+             [ngClass]="{ 'is-invalid': form['submitted'] && controls.firstName.invalid }">
+      @if (form['submitted'] && controls.firstName.invalid) {
+        <div class="text-danger">
+          @if (controls.firstName.hasError('required')) {
+            <div class="small">First Name is required.</div>
+          }
+        </div>
+      }
+    </div>
+    <div class="col">
+      <label for="lastName">Last Name</label>
+      <input id="lastName" formControlName="lastName" class="form-control" required
+             [ngClass]="{ 'is-invalid': form['submitted'] && controls.lastName.invalid }">
+      @if (form['submitted'] && controls.lastName.invalid) {
+        <div class="text-danger">
+          @if (controls.lastName.hasError('required')) {
+            <div class="small">Last Name is required.</div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col">
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" class="form-control" required
+             [ngClass]="{ 'is-invalid': form['submitted'] && controls.email.invalid }">
+      @if (form['submitted'] && controls.email.invalid) {
+        <div class="text-danger">
+          @if (controls.email.hasError('required')) {
+            <div class="small">Email is required.</div>
+          }
+        </div>
+      }
+    </div>
+    <div class="col">
+      <label for="phone">Phone</label>
+      <input id="phone" formControlName="phone" class="form-control" required
+             [ngClass]="{ 'is-invalid': form['submitted'] && controls.phone.invalid }">
+      @if (form['submitted'] && controls.phone.invalid) {
+        <div class="text-danger">
+          @if (controls.phone.hasError('required')) {
+            <div class="small">Phone is required.</div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col">
+      <label for="addressLine1">Address</label>
+      <input id="addressLine1" formControlName="addressLine1" class="form-control" required
+             [ngClass]="{ 'is-invalid': form['submitted'] && controls.addressLine1.invalid }">
+      @if (form['submitted'] && controls.addressLine1.invalid) {
+        <div class="text-danger">
+          @if (controls.addressLine1.hasError('required')) {
+            <div class="small">Address is required.</div>
+          }
+        </div>
+      }
+    </div>
+    <div class="col">
+      <label for="addressLine2"></label>
+      <input id="addressLine2" formControlName="addressLine2" class="form-control">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col">
+      <label for="city">City</label>
+      <input id="city" formControlName="city" class="form-control" required
+             [ngClass]="{ 'is-invalid': form['submitted'] && controls.city.invalid }">
+      @if (form['submitted'] && controls.city.invalid) {
+        <div class="text-danger">
+          @if (controls.city.hasError('required')) {
+            <div class="small">City is required.</div>
+          }
+        </div>
+      }
+    </div>
+    <div class="col">
+      <label for="state">State</label>
+      <select id="state" formControlName="state" class="form-select" aria-label="State select">
+        <option selected value="TX">TX</option>
+      </select>
+    </div>
+    <div class="col">
+      <label for="zipCode">Zip Code</label>
+      <input id="zipCode" formControlName="zipCode" class="form-control" required
+             [ngClass]="{ 'is-invalid': form['submitted'] && controls.zipCode.invalid }">
+      @if (form['submitted'] && controls.zipCode.invalid) {
+        <div class="text-danger">
+          @if (controls.zipCode.hasError('required')) {
+            <div class="small">Zip Code is required.</div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col">
+      <label for="tdsp">Tdsp</label>
+      <select id="tdsp" formControlName="tdsp" class="form-select" aria-label="Tdsp select">
+        <option selected value="CNP">Centerpoint</option>
+      </select>
+    </div>
+    <div class="col">
+      <label for="tdspMeterId">Meter Identification</label>
+      <input id="tdspMeterId" formControlName="tdspMeterId" class="form-control" required
+             [ngClass]="{ 'is-invalid': form['submitted'] && controls.tdspMeterId.invalid }">
+      @if (form['submitted'] && controls.tdspMeterId.invalid) {
+        <div class="text-danger">
+          @if (controls.tdspMeterId.hasError('required')) {
+            <div class="small">Meter Identification is required.</div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col align-content-center">
+      <button type="submit" class="btn btn-primary">Create Account</button>
+    </div>
+  </div>
+</form>
