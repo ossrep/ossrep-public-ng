@@ -108,14 +108,14 @@
   </div>
 
   <div class="row mb-3">
-    <div class="col">
+    <div class="col-md-4">
       <label for="tdsp">Tdsp</label>
       <select id="tdsp" formControlName="tdsp" class="form-select" aria-label="Tdsp select">
         <option selected value="CNP">Centerpoint</option>
       </select>
     </div>
-    <div class="col">
-      <label for="tdspMeterId">Meter Identification</label>
+    <div class="col-md-8">
+      <label for="tdspMeterId">Meter Identifier</label>
       <input id="tdspMeterId" formControlName="tdspMeterId" class="form-control" required
              [ngClass]="{ 'is-invalid': form['submitted'] && controls.tdspMeterId.invalid }">
       @if (form['submitted'] && controls.tdspMeterId.invalid) {

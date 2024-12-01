@@ -10,4 +10,5 @@ import { NavbarComponent } from "./pages/shared/navbar/navbar.component";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  title = 'ossrep-public-ng';
 }
